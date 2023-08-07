@@ -8,5 +8,4 @@ import { Coctail } from '../models/coctail';
 })
 export class CoctailComponent {
   @Input('coctail') coctail: Coctail | null = null
-
 }

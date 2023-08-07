@@ -11,7 +11,7 @@ export class CoctailsListComponent implements OnInit{
   constructor(private readonly coctailListService: CoctailsListService) {}
 
   coctails: Coctail[] = []
-  coctailsPerPage = 10
+  coctailsPerPage = 8
   currentPage = 1
 
   async ngOnInit(): Promise<void> {
@@ -22,12 +22,7 @@ export class CoctailsListComponent implements OnInit{
     const startIndex = (this.currentPage - 1) * this.coctailsPerPage
     return this.coctails.slice(startIndex, startIndex + this.coctailsPerPage)
   }
-
-  // getPaginationArray(): number[] {
-  //   const totalPages = Math.ceil(this.coctails.length / this.coctailsPerPage);
-  //   return new Array(totalPages).fill(0).map((_, index) => index + 1);
-  // }
-
+  
   getVisiblePaginationArray(): number[] {
     const totalPages = Math.ceil(this.coctails.length / this.coctailsPerPage);
     const maxVisiblePages = 5;

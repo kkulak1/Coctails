@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { CoctailsListComponent } from './coctails-list/coctails-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoctailComponent } from './coctail/coctail.component';
+import { CoctailDetailsComponent } from './coctail-details/coctail-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoctailsListComponent,
-    CoctailComponent
+    CoctailComponent,
+    CoctailDetailsComponent
   ],
   imports: [
     BrowserModule,
