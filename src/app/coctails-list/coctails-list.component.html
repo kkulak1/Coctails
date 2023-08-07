@@ -1,0 +1,14 @@
+<div class="list">
+    <div class="list">
+        <app-coctail *ngFor="let coctail of paginatedCoctails" [coctail]="coctail" class="coctail">
+        </app-coctail>
+    </div>
+</div>
+<div class="pagination-container">
+    <button *ngFor="let pageNumber of getVisiblePaginationArray()"
+        [class.active]="pageNumber === currentPage"
+        (click)="changePage(pageNumber)"
+        >
+        {{ pageNumber }}
+    </button>
+</div>

@@ -1,1 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+#main h1 {
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .coctail{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .thumbnail {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .pagination-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .pagination-container button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s;
+  }
+  
+  .pagination-container::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  .pagination-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+  }
+  
+  .pagination-container::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+  }
+
+  .pagination-container button.active {
+    background-color: #ccc;
+  }
