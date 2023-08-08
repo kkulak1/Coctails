@@ -13,6 +13,7 @@ export class CoctailsListComponent implements OnInit{
   coctails: Coctail[] = []
   coctailsPerPage = 8
   currentPage = 1
+  selectedOption = "aaa"; // Deklaracja pola dla wybranej opcji
 
   async ngOnInit(): Promise<void> {
     this.coctails = await this.coctailListService.coctails
@@ -42,4 +43,9 @@ export class CoctailsListComponent implements OnInit{
   changePage(pageNumber: number) {
     this.currentPage = pageNumber;
   }
+
+  async submitFilter() {
+    console.log(this.selectedOption);
+    this.coctails = await this.coctailListService.getCoctailsByCategory(this.selectedOption)
+}
 }

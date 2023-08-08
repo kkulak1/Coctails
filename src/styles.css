@@ -21,13 +21,6 @@
     margin-bottom: 10px;
   }
   
-  .thumbnail {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    margin-right: 30px;
-  }
-  
   .pagination-container {
     display: flex;
     align-items: center;
@@ -92,42 +85,67 @@
   .coctail-container {
     display: flex;
     margin: 20px;
-    justify-content: flex-end; /* Przesuń zawartość na prawą stronę */
+    justify-content: flex-end; 
   }
 
-.coctail-list {
-  flex: 1;
-  padding-right: 20px;
-}
+  .coctail-list {
+    flex: 1;
+    padding-right: 20px;
+  }
 
-.coctail-details {
-  flex: 0 0 35%; /* Zmniejsz szerokość opisu, aby ustąpić miejsce dla listy */
-  margin-left: auto; /* Dodaj margines z lewej strony, aby przesunąć opis na prawo */
-}
+  .coctail-details {
+    flex: 0 0 40%;
+    margin-left: auto; 
+  }
 
-.coctail-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
+  .coctail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
 
-.thumbnail {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  margin-right: 10px;
-  border-radius: 50%;
-}
+  .thumbnail-desc {
+    max-width: 500px; 
+    height: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
 
-.thumbnail-desc {
-  max-width: 100%;
-  height: auto;
-}
+  .coctail-info {
+    flex: 1;
+  }
 
-.coctail-info {
-  flex: 1;
-}
+  .coctail-instructions {
+    margin-top: 20px;
+  }
 
-.coctail-instructions {
-  margin-top: 20px;
-}
+  .filter-container {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  
+  .filter-select {
+    margin-right: 10px; 
+    padding: 5px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .filter-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .filter-button:hover {
+    background-color: #0056b3;
+  }

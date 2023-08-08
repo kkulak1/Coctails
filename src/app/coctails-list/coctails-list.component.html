@@ -1,3 +1,16 @@
+<div class="filter-container">
+    <select [(ngModel)]="selectedOption" name="selectedOption" class="filter-select">
+        <option value="Ordinary_Drink">Ordinary Drink</option>
+        <option value="Cocktail">Cocktail</option>
+        <option value="Shake">Shake</option>
+        <option value="Punch / Party Drink">Punch / Party Drink</option>
+        <option value="Coffee / Tea">Coffee / Tea</option>
+        <option value="Soft drink">Soft drink</option>
+        <option value="Cocoa">Cocoa</option>
+        <option value="Other / Unknown">Other</option>
+    </select>
+    <button (click)="submitFilter()" class="filter-button">Filter</button>
+</div>
 <div class="list">
     <div class="list">
         <app-coctail *ngFor="let coctail of paginatedCoctails" [coctail]="coctail" class="coctail">

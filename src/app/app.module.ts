@@ -7,6 +7,7 @@ import { CoctailsListComponent } from './coctails-list/coctails-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoctailComponent } from './coctail/coctail.component';
 import { CoctailDetailsComponent } from './coctail-details/coctail-details.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CoctailDetailsComponent } from './coctail-details/coctail-details.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
