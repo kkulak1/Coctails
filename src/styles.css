@@ -88,3 +88,46 @@
   .coctail-name:hover {
     color: #007bff;
   }
+
+  .coctail-container {
+    display: flex;
+    margin: 20px;
+    justify-content: flex-end; /* Przesuń zawartość na prawą stronę */
+  }
+
+.coctail-list {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.coctail-details {
+  flex: 0 0 35%; /* Zmniejsz szerokość opisu, aby ustąpić miejsce dla listy */
+  margin-left: auto; /* Dodaj margines z lewej strony, aby przesunąć opis na prawo */
+}
+
+.coctail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.thumbnail-desc {
+  max-width: 100%;
+  height: auto;
+}
+
+.coctail-info {
+  flex: 1;
+}
+
+.coctail-instructions {
+  margin-top: 20px;
+}

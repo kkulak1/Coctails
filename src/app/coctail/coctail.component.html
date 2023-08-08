@@ -1,5 +1,4 @@
 <ul *ngIf="coctail" class="coctail-item">
     <img [src]="coctail.strDrinkThumb" class="thumbnail" alt="Zdjęcie" />
-    <!-- <span>{{coctail.strDrink}}</span> -->
     <a routerLink="/coctails/{{coctail.strDrink}}">{{coctail.strDrink}}</a>
 </ul>
