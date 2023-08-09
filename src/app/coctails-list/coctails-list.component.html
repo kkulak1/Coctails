@@ -10,12 +10,18 @@
         <option value="Other / Unknown">Other</option>
     </select>
     <button (click)="submitFilter()" class="filter-button">Filter</button>
+    <label>
+        <input type="checkbox" [(ngModel)]="showAlcoholic" 
+            name="showAlcoholic"
+            (change)="toggleShowAlcoholic()">
+            Show alcoholic
+      </label>
 </div>
-<div class="list">
-    <div class="list">
-        <app-coctail *ngFor="let coctail of paginatedCoctails" [coctail]="coctail" class="coctail">
-        </app-coctail>
-    </div>
+<div class="list" *ngFor="let coctail of paginatedCoctails">
+    <app-coctail 
+    [coctail]="coctail" 
+    class="coctail">
+</app-coctail>
 </div>
 <div class="pagination-container">
     <button *ngFor="let pageNumber of getVisiblePaginationArray()"
