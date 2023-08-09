@@ -1,151 +1,147 @@
 #main h1 {
-    text-align: center;
-  }
+  text-align: center;
+}
 
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-    padding: 100px;
-  }
-  
-  .list {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .coctail{
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .pagination-container {
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    width: 100%;
-  }
-  
-  .pagination-container button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    font-size: 12px;
-    transition: background-color 0.3s;
-  }
-  
-  .pagination-container::-webkit-scrollbar {
-    height: 4px;
-  }
-  
-  .pagination-container::-webkit-scrollbar-thumb {
-    background: #ccc;
-  }
-  
-  .pagination-container::-webkit-scrollbar-thumb:hover {
-    background: #aaa;
-  }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding: 100px;
+}
 
-  .pagination-container button.active {
-    background-color: #ccc;
-  }
+.list {
+  display: flex;
+  flex-direction: column;
+}
 
-  .coctail-item {
-    list-style-type: none;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .thumbnail {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    margin-right: 10px;
-    border-radius: 50%;
-  }
-  
-  .coctail-name {
-    font-size: 16px;
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .coctail-name:hover {
-    color: #007bff;
-  }
+.coctail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-  .coctail-container {
-    display: flex;
-    margin: 20px;
-    justify-content: flex-end; 
-  }
+.pagination-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
 
-  .coctail-list {
-    flex: 1;
-    padding-right: 20px;
-  }
+.pagination-container button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s;
+}
 
-  .coctail-details {
-    flex: 0 0 40%;
-    margin-left: auto; 
-  }
+.pagination-container::-webkit-scrollbar {
+  height: 4px;
+}
 
-  .coctail-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
+.pagination-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
 
-  .thumbnail-desc {
-    max-width: 500px; 
-    height: auto;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
+.pagination-container::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
 
-  .coctail-info {
-    flex: 1;
-  }
+.pagination-container button.active {
+  background-color: #ccc;
+}
 
-  .coctail-instructions {
-    margin-top: 20px;
-  }
+.coctail-item {
+  list-style-type: none;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
 
-  .filter-container {
-    display: flex;
-    justify-content: flex-start; 
-    align-items: center;
-    margin-top: 10px;
-    margin-left: 10px;
-  }
-  
-  .filter-select {
-    margin-right: 10px; 
-    padding: 5px; 
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-  
-  .filter-button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .filter-button:hover {
-    background-color: #0056b3;
-  }
+.thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.coctail-name {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.coctail-name:hover {
+  color: #007bff;
+}
+
+.coctail-container {
+  display: flex;
+  margin: 20px;
+  justify-content: flex-end;
+}
+
+.coctail-list {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.coctail-details {
+  flex: 0 0 40%;
+  margin-left: auto;
+}
+
+.coctail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.thumbnail-desc {
+  max-width: 500px;
+  height: auto;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.coctail-info {
+  flex: 1;
+}
+
+.coctail-instructions {
+  margin-top: 20px;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.filter-select {
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.filter-button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}

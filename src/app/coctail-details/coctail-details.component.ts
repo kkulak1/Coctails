@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Coctail } from '../models/coctail';
 import { CoctailsService } from '../services/coctails.service';
 import { CoctailDesc } from '../models/coctailDesc';
 
@@ -12,6 +11,8 @@ import { CoctailDesc } from '../models/coctailDesc';
 export class CoctailDetailsComponent implements OnInit{
   @Input('coctail') coctail: CoctailDesc | null = null
 
+  textInput: string = ""
+
   constructor (private readonly route: ActivatedRoute, private readonly coctailService: CoctailsService) {}
 
   ngOnInit(): void {
@@ -22,5 +23,10 @@ export class CoctailDetailsComponent implements OnInit{
 
   async loadCoctail(name: string): Promise<void> {
     this.coctail = (await this.coctailService.getCoctailByName(name)).at(0)!;
+  }
+
+  async search() {
+    console.log(this.textInput)
+    this.coctail = (await this.coctailService.getCoctailByName(this.textInput)).at(0)!
   }
 }

@@ -3,6 +3,10 @@
         <app-coctails-list></app-coctails-list>
     <ul *ngIf="coctail" class="coctail-details">
       <div class="coctail-description">
+        <form (ngSubmit)="search()">
+          <input type="text" [(ngModel)]="textInput" name="textInput" placeholder="Looking for a coctail?">
+          <button type="submit" class="filter-button">Search</button>
+        </form>
         <div class="coctail-image">
           <img [src]="coctail.strDrinkThumb" class="thumbnail-desc" alt="Photo" />
         </div>
