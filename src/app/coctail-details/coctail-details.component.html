@@ -2,6 +2,7 @@
     <div class="coctail-container">
         <app-coctails-list></app-coctails-list>
     <ul *ngIf="coctail" class="coctail-details">
+      {{coctail.strDrink}}
       <div class="coctail-description">
         <form (ngSubmit)="search()">
           <input type="text" [(ngModel)]="textInput" name="textInput" placeholder="Looking for a coctail?">

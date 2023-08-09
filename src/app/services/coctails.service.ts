@@ -45,7 +45,7 @@ export class CoctailsService {
 
   async getRandomCoctail() {
     const response = await firstValueFrom(this.http.get<coctailsResponse>(`${environment.apiUrlRandomCoctail}`))
-    
+    console.log(response.drinks)
     return response.drinks
   }
 

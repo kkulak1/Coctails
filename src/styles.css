@@ -144,7 +144,12 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.filter-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
 }
 
 .random-button {
@@ -155,5 +160,10 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.random-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
 }
