@@ -20,6 +20,7 @@
 <div class="list" *ngFor="let coctail of paginatedCoctails">
     <app-coctail 
     [coctail]="coctail" 
+    *ngIf="showAlcoholic ? coctail.isAlcoholic : !coctail.isAlcoholic"
     class="coctail">
 </app-coctail>
 </div>
