@@ -4,7 +4,6 @@ import { Coctail } from '../models/coctail';
 import { firstValueFrom } from 'rxjs';
 import { environment } from '../environments/environment';
 import { CoctailsService } from './coctails.service';
-import { CoctailDesc } from '../models/coctailDesc';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +15,9 @@ export class CoctailsListService {
   coctails: Promise<Coctail[]> = this.getCoctailsByCategory()
 
   async getCoctailsByCategory(category="Ordinary_Drink") {
+    console.log("hello before get")
     const response = await firstValueFrom(this.http.get<coctailsResponse>(`${environment.apiUrlByCategory}` + category))
+    console.log("hello after get")
 
     const drinks = response.drinks;
 
@@ -26,8 +27,8 @@ export class CoctailsListService {
       if (coctailDesc.strAlcoholic === "Alcoholic") drink.isAlcoholic = true;
       else drink.isAlcoholic = false;
     }
-    console.log(drinks)
-    return drinks
+
+    return response.drinks
   }
 }
 

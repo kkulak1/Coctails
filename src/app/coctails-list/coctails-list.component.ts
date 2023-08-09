@@ -19,6 +19,7 @@ export class CoctailsListComponent implements OnInit{
   showAlcoholic: boolean = true
 
   async ngOnInit(): Promise<void> {
+    console.log("hello, ngOnInit");
     (await this.coctailListService.coctails).forEach(coctail => {
       console.log(coctail.isAlcoholic)
       if (coctail.isAlcoholic) this.coctailsAlcoholic.push(coctail)
