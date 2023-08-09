@@ -11,12 +11,20 @@ export class CoctailsListComponent implements OnInit{
   constructor(private readonly coctailListService: CoctailsListService) {}
 
   coctails: Coctail[] = []
+  coctailsAlcoholic: Coctail[] = []
+  coctailsNonAlcoholic: Coctail[] = []
   coctailsPerPage = 8
   currentPage = 1
-  selectedOption = "aaa"; // Deklaracja pola dla wybranej opcji
+  selectedOption = "Ordinary_Drink";
+  showAlcoholic: boolean = true
 
   async ngOnInit(): Promise<void> {
-    this.coctails = await this.coctailListService.coctails
+    (await this.coctailListService.coctails).forEach(coctail => {
+      console.log(coctail.isAlcoholic)
+      if (coctail.isAlcoholic) this.coctailsAlcoholic.push(coctail)
+      else this.coctailsNonAlcoholic.push(coctail)
+    })
+    this.coctails = this.coctailsAlcoholic.concat(this.coctailsNonAlcoholic)
   }
 
   get paginatedCoctails() {
@@ -25,19 +33,26 @@ export class CoctailsListComponent implements OnInit{
   }
   
   getVisiblePaginationArray(): number[] {
-    const totalPages = Math.ceil(this.coctails.length / this.coctailsPerPage);
+    const totalPages = this.coctails.length > 0 ? Math.ceil(this.coctails.length / this.coctailsPerPage) : 1;
     const maxVisiblePages = 5;
     const currentPageIndex = this.currentPage - 1;
     const middlePageIndex = Math.floor(maxVisiblePages / 2);
-
+  
     let startIndex = 0;
     if (currentPageIndex >= middlePageIndex && currentPageIndex + middlePageIndex < totalPages) {
       startIndex = currentPageIndex - middlePageIndex;
     } else if (currentPageIndex + middlePageIndex >= totalPages) {
       startIndex = totalPages - maxVisiblePages;
     }
-
-    return new Array(maxVisiblePages).fill(0).map((_, index) => startIndex + index + 1);
+  
+    const visiblePages = [];
+    for (let i = startIndex; i < totalPages && visiblePages.length < maxVisiblePages; i++) {
+      if (i >= 0) {
+        visiblePages.push(i + 1);
+      }
+    }
+  
+    return visiblePages;
   }
 
   changePage(pageNumber: number) {
@@ -45,7 +60,27 @@ export class CoctailsListComponent implements OnInit{
   }
 
   async submitFilter() {
-    console.log(this.selectedOption);
-    this.coctails = await this.coctailListService.getCoctailsByCategory(this.selectedOption)
-}
+    this.coctailsAlcoholic.splice(0, this.coctailsAlcoholic.length);
+    this.coctailsNonAlcoholic.splice(0, this.coctailsNonAlcoholic.length);
+    const result: Coctail[] = await this.coctailListService.getCoctailsByCategory(this.selectedOption);
+    
+    (result).forEach((coctail: Coctail) => {
+      if (coctail.isAlcoholic === true) this.coctailsAlcoholic.push(coctail)
+      else this.coctailsNonAlcoholic.push(coctail)
+    })
+
+    this.coctails = this.coctailsAlcoholic.concat(this.coctailsNonAlcoholic)
+  }
+
+  toggleShowAlcoholic() {
+    if (this.showAlcoholic === true) {
+      this.showAlcoholic = false
+      this.coctails = this.coctailsNonAlcoholic
+    }
+    else {
+      this.showAlcoholic = true
+      this.coctails = this.coctailsAlcoholic.concat(this.coctailsNonAlcoholic)
+    }
+      
+  }
 }
