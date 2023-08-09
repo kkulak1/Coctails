@@ -6,18 +6,21 @@
         <form (ngSubmit)="search()">
           <input type="text" [(ngModel)]="textInput" name="textInput" placeholder="Looking for a coctail?">
           <button type="submit" class="filter-button">Search</button>
+          <button (click)="chooseRandomCoctail()" class="random-button">Random</button>
         </form>
         <div class="coctail-image">
           <img [src]="coctail.strDrinkThumb" class="thumbnail-desc" alt="Photo" />
         </div>
         <div class="coctail-info">
           <h2>{{ coctail.strDrink }}</h2>
-          <p><strong>Kategoria:</strong> {{ coctail.strCategory }}</p>
-          <p><strong>Alkoholowy:</strong> {{ coctail.strAlcoholic }}</p>
+          <p><strong>Category:</strong> {{ coctail.strCategory }}</p>
+          <p><strong>Type:</strong> {{ coctail.strAlcoholic }}</p>
         </div>
       </div>
       <div class="coctail-instructions">
-        <p><strong>Instrukcje:</strong></p>
+        <p><strong>Ingrediens:</strong></p>
+        <p>{{ coctail.ingredients }}</p>
+        <p><strong>Instructions:</strong></p>
         <p>{{ coctail.strInstructions }}</p>
       </div>
     </ul>

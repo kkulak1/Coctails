@@ -13,7 +13,7 @@ export class CoctailsListComponent implements OnInit{
   coctails: Coctail[] = []
   coctailsPerPage = 8
   currentPage = 1
-  selectedOption = "aaa";
+  selectedOption = "Ordinary_Drink";
 
   async ngOnInit(): Promise<void> {
     this.coctails = await this.coctailListService.coctails
@@ -47,5 +47,5 @@ export class CoctailsListComponent implements OnInit{
   async submitFilter() {
     console.log(this.selectedOption);
     this.coctails = await this.coctailListService.getCoctailsByCategory(this.selectedOption)
-}
+  }
 }

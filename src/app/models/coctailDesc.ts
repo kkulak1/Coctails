@@ -4,5 +4,6 @@ export interface CoctailDesc {
     strCategory: string,
     strAlcoholic: string,
     strInstructions: string
-    strDrinkThumb: string
+    strDrinkThumb: string,
+    ingredients: string[]
   }
