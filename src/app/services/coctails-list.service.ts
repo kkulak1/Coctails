@@ -15,7 +15,7 @@ export class CoctailsListService {
 
   async getCoctailsByCategory(category="Ordinary_Drink") {
     const response = await firstValueFrom(this.http.get<coctailsResponse>(`${environment.apiUrlByCategory}` + category))
-
+  
     console.log(response)
 
     return response.drinks

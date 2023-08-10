@@ -69,6 +69,11 @@
   object-fit: cover;
   margin-right: 10px;
   border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.5);
 }
 
 .coctail-name {
@@ -122,18 +127,26 @@
 
 .filter-container {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 0px;
+}
+
+.filter-select-container {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
 }
 
 .filter-select {
-  margin-right: 10px;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
+}
+
+.button-container {
+  margin-left: 10px;
 }
 
 .filter-button {
@@ -147,11 +160,6 @@
   transition: background-color 0.3s, transform 0.2s;
 }
 
-.filter-button:hover {
-  background-color: #0056b3;
-  transform: scale(1.1);
-}
-
 .random-button {
   margin-left: 180px;
   padding: 5px 10px;
@@ -163,6 +171,7 @@
   transition: background-color 0.3s, transform 0.2s;
 }
 
+.filter-button:hover,
 .random-button:hover {
   background-color: #0056b3;
   transform: scale(1.1);

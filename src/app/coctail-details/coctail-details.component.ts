@@ -26,12 +26,19 @@ export class CoctailDetailsComponent implements OnInit{
   }
 
   async search() {
+    console.log("hello from loadCoctail")
     console.log(this.textInput)
     this.coctail = (await this.coctailService.getCoctailByName(this.textInput)).at(0)!
   }
 
   async chooseRandomCoctail() {
     this.coctail = (await this.coctailService.getRandomCoctail()).at(0)!
-    console.log(this.coctail)
+// 
+// 
+// 
+// 
+// 
+// 
+//     
   }
 }

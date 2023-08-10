@@ -13,6 +13,9 @@ export class CoctailsService {
   coctail: Promise<CoctailDesc[]> = this.getCoctailByName()
 
   async getCoctailByName(name="margarita") {
+    console.log("hllo1")
+    console.log(name)
+    console.log("hello2")
     const response = await firstValueFrom(this.http.get<coctailsResponse>(`${environment.apiUrlCoctailByName}` + name))
 
     const coctails: CoctailDesc[] = [];
@@ -40,11 +43,14 @@ export class CoctailsService {
       });
     }
 
+    console.log(coctails)
+
     return coctails;
   }
 
   async getRandomCoctail() {
     const response = await firstValueFrom(this.http.get<coctailsResponse>(`${environment.apiUrlRandomCoctail}`))
+    console.log("getRAndom")
     console.log(response.drinks)
     return response.drinks
   }
