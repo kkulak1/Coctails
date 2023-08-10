@@ -18,16 +18,32 @@ export class CoctailsService {
     console.log("hello2")
     const response = await firstValueFrom(this.http.get<coctailsResponse>(`${environment.apiUrlCoctailByName}` + name))
 
+    return this.getArrayofCoctailsWithIngredients(response.drinks);
+  }
+
+  async getRandomCoctail() {
+    const response = await firstValueFrom(this.http.get<coctailsResponse>(`${environment.apiUrlRandomCoctail}`))
+    
+    return this.getArrayofCoctailsWithIngredients(response.drinks);
+  }
+
+  getArrayofCoctailsWithIngredients(drinks: CoctailDesc[]) {
     const coctails: CoctailDesc[] = [];
 
-    if (response.drinks) {
-      response.drinks.forEach(drink => {
+    if (drinks) {
+      drinks.forEach(drink => {
         const ingredients: string[] = [];
+        const measures: string[] = [];
         for (let i = 1; i <= 15; i++) {
           const ingredientKey = `strIngredient${i}` as keyof typeof drink;
+          const measureKey = `strMeasure${i}` as keyof typeof drink;
           const ingredient = drink[ingredientKey];
-          if (ingredient) {
-            ingredients.push(ingredient.toString());
+          const measure = drink[measureKey] 
+          if (ingredient && measure) {
+            ingredients.push(" " + measure.toString() + ingredient.toString());
+          }
+          else if (ingredient && !measure) {
+            ingredients.push(" " + ingredient.toString());
           }
         }
 
@@ -46,12 +62,6 @@ export class CoctailsService {
     console.log(coctails)
 
     return coctails;
-  }
-
-  async getRandomCoctail() {
-    const response = await firstValueFrom(this.http.get<coctailsResponse>(`${environment.apiUrlRandomCoctail}`))
-    console.log(response.drinks)
-    return response.drinks
   }
 }
 

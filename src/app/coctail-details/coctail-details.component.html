@@ -1,32 +1,8 @@
 <div class="main-container">
-    <div class="coctail-container">
-        <app-coctails-list></app-coctails-list>
-    <ul *ngIf="coctail" class="coctail-details">
-      <div class="coctail-description">
-        <div class="filter-container">
-          <form (ngSubmit)="search()">
-            <input type="text" [(ngModel)]="textInput" name="textInput" placeholder="Looking for a cocktail?">
-            <button type="submit" class="filter-button">Search</button>
-          </form>
-          <button (click)="chooseRandomCoctail()" class="random-button">Random</button>  
-        </div>
-        <div class="coctail-image">
-          <img [src]="coctail.strDrinkThumb" class="thumbnail-desc" alt="Photo" />
-        </div>
-        <div class="coctail-info">
-          <h2>{{ coctail.strDrink }}</h2>
-          <p><strong>Category:</strong> {{ coctail.strCategory }}</p>
-          <p><strong>Type:</strong> {{ coctail.strAlcoholic }}</p>
-        </div>
-      </div>
-      <div class="coctail-instructions">
-        <p><strong>Ingrediens:</strong></p>
-        <p>{{ coctail.ingredients }}</p>
-        <p><strong>Instructions:</strong></p>
-        <p>{{ coctail.strInstructions }}</p>
-      </div>
-    </ul>
-    <ul *ngIf="!coctail" class="coctail-details">
+  <div class="coctail-container">
+      <app-coctails-list></app-coctails-list>
+  <ul *ngIf="coctail" class="coctail-details">
+    <div class="coctail-description">
       <div class="filter-container">
         <form (ngSubmit)="search()">
           <input type="text" [(ngModel)]="textInput" name="textInput" placeholder="Looking for a cocktail?">
@@ -34,10 +10,34 @@
         </form>
         <button (click)="chooseRandomCoctail()" class="random-button">Random</button>  
       </div>
-      <div *ngIf="showNotFoundModal" class="not-found-modal">
-        <p class="not-found-message">No cocktail was found.</p>
-        <button (click)="closeNotFoundModal()" class="close-button">Close</button>
+      <div class="coctail-image">
+        <img [src]="coctail.strDrinkThumb" class="thumbnail-desc" alt="Photo" />
       </div>
-    </ul>
-  </div>
+      <div class="coctail-info">
+        <h2>{{ coctail.strDrink }}</h2>
+        <p><strong>Category:</strong> {{ coctail.strCategory }}</p>
+        <p><strong>Type:</strong> {{ coctail.strAlcoholic }}</p>
+      </div>
+    </div>
+    <div class="coctail-instructions">
+      <p><strong>Ingrediens:</strong></p>
+      <p>{{ coctail.ingredients }}</p>
+      <p><strong>Instructions:</strong></p>
+      <p>{{ coctail.strInstructions }}</p>
+    </div>
+  </ul>
+  <ul *ngIf="!coctail" class="coctail-details">
+    <div class="filter-container">
+      <form (ngSubmit)="search()">
+        <input type="text" [(ngModel)]="textInput" name="textInput" placeholder="Looking for a cocktail?">
+        <button type="submit" class="filter-button">Search</button>
+      </form>
+      <button (click)="chooseRandomCoctail()" class="random-button">Random</button>  
+    </div>
+    <div *ngIf="showNotFoundModal" class="not-found-modal">
+      <p class="not-found-message">No cocktail was found.</p>
+      <button (click)="closeNotFoundModal()" class="close-button">Close</button>
+    </div>
+  </ul>
+</div>
 </div>
