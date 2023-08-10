@@ -33,12 +33,5 @@ export class CoctailDetailsComponent implements OnInit{
 
   async chooseRandomCoctail() {
     this.coctail = (await this.coctailService.getRandomCoctail()).at(0)!
-// 
-// 
-// 
-// 
-// 
-// 
-//     
   }
 }
