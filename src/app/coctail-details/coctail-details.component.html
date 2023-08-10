@@ -5,7 +5,7 @@
       <div class="coctail-description">
         <div class="filter-container">
           <form (ngSubmit)="search()">
-            <input type="text" [(ngModel)]="textInput" name="textInput" placeholder="Looking for a coctail?">
+            <input type="text" [(ngModel)]="textInput" name="textInput" placeholder="Looking for a cocktail?">
             <button type="submit" class="filter-button">Search</button>
           </form>
           <button (click)="chooseRandomCoctail()" class="random-button">Random</button>  
@@ -24,6 +24,19 @@
         <p>{{ coctail.ingredients }}</p>
         <p><strong>Instructions:</strong></p>
         <p>{{ coctail.strInstructions }}</p>
+      </div>
+    </ul>
+    <ul *ngIf="!coctail" class="coctail-details">
+      <div class="filter-container">
+        <form (ngSubmit)="search()">
+          <input type="text" [(ngModel)]="textInput" name="textInput" placeholder="Looking for a cocktail?">
+          <button type="submit" class="filter-button">Search</button>
+        </form>
+        <button (click)="chooseRandomCoctail()" class="random-button">Random</button>  
+      </div>
+      <div *ngIf="showNotFoundModal" class="not-found-modal">
+        <p class="not-found-message">No cocktail was found.</p>
+        <button (click)="closeNotFoundModal()" class="close-button">Close</button>
       </div>
     </ul>
   </div>

@@ -12,6 +12,7 @@ export class CoctailDetailsComponent implements OnInit{
   @Input('coctail') coctail: CoctailDesc | null = null
 
   textInput: string = ""
+  showNotFoundModal = false;
 
   constructor (private readonly route: ActivatedRoute, private readonly coctailService: CoctailsService) {}
 
@@ -29,9 +30,15 @@ export class CoctailDetailsComponent implements OnInit{
     console.log("hello from loadCoctail")
     console.log(this.textInput)
     this.coctail = (await this.coctailService.getCoctailByName(this.textInput)).at(0)!
+    this.showNotFoundModal = true;
   }
 
   async chooseRandomCoctail() {
     this.coctail = (await this.coctailService.getRandomCoctail()).at(0)!
+    this.showNotFoundModal = true;
+  }
+
+  closeNotFoundModal() {
+    this.showNotFoundModal = false;
   }
 }
